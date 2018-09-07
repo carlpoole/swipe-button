@@ -9,6 +9,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -89,6 +90,10 @@ public class SwipeButton extends RelativeLayout {
         centerText.setText(text);
     }
 
+    public void setTypeface(Typeface typeface) {
+        centerText.setTypeface(typeface);
+    }
+
     public void setBackground(Drawable drawable) {
         background.setBackground(drawable);
     }
@@ -137,6 +142,18 @@ public class SwipeButton extends RelativeLayout {
 
     public void setHasActivationState(boolean hasActivationState) {
         this.hasActivationState = hasActivationState;
+    }
+
+    public TextView getCenterText() {
+        return centerText;
+    }
+
+    public Drawable getDisabledDrawable() {
+        return disabledDrawable;
+    }
+
+    public Drawable getEnabledDrawable() {
+        return enabledDrawable;
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
